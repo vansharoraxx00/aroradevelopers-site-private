@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 export default function About() {
   const leaders = [
-    { name: "Amit Sharma", role: "CEO & Founder", img: "https://randomuser.me/api/portraits/men/32.jpg", linkedin: "#" },
-    { name: "Priya Mehta", role: "CTO", img: "https://randomuser.me/api/portraits/women/44.jpg", linkedin: "#" },
-    { name: "Rahul Verma", role: "Head of AI", img: "https://randomuser.me/api/portraits/men/65.jpg", linkedin: "#" },
+    { name: "Sourabh Jasuja", role: "CEO & Founder", img: "https://randomuser.me/api/portraits/men/32.jpg", linkedin: "#" },
+    { name: "Vansh Arora", role: "CTO", img: "https://randomuser.me/api/portraits/men/32.jpg", linkedin: "#" },
+    { name: "Raghav Arora", role: "Project Manager", img: "https://randomuser.me/api/portraits/men/65.jpg", linkedin: "#" },
   ];
 
   return (

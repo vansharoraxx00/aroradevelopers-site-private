@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(null);
   const [logoText, setLogoText] = useState("");
-  const fullLogo = "NovaTech";
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const fullLogo = "Eratos software";
 
   // ⌨️ Typewriter Effect with Reset
   useEffect(() => {
@@ -58,20 +59,19 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full top-0 left-0 z-50 bg-white shadow-md border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        
         {/* 🔥 Gradient Flush Logo */}
         <motion.h1
           key={logoText}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
-          className="text-3xl md:text-4xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+          className="text-3xl md:text-4xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-500 via-purple-500 to-red-500 bg-clip-text text-transparent"
         >
           {logoText}
           <span className="animate-pulse text-cyan-500">|</span>
         </motion.h1>
 
-        {/* 🌐 Navbar Links */}
+        {/* 🌐 Desktop Navbar Links */}
         <ul className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
           <li>
             <Link to="/" className="relative group">
@@ -129,7 +129,66 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
+
+        {/* 📱 Mobile Hamburger */}
+        <button
+          className="md:hidden text-2xl text-gray-700"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
+          {mobileOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
+
+      {/* 📱 Mobile Menu */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 right-0 w-72 h-full bg-white shadow-lg border-l border-gray-200 z-50 p-6 overflow-y-auto"
+          >
+            <ul className="flex flex-col gap-6 text-gray-700 font-medium">
+              <li>
+                <Link to="/" onClick={() => setMobileOpen(false)}>
+                  Home
+                </Link>
+              </li>
+
+              {menus.map((menu, idx) => (
+                <li key={idx}>
+                  <p className="font-semibold text-cyan-600">{menu.name}</p>
+                  <ul className="pl-4 mt-2 space-y-2 text-sm">
+                    {menu.links.map((link, i) => (
+                      <li key={i}>
+                        <Link
+                          to={link.path}
+                          className="block hover:text-cyan-600"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+
+              <li>
+                <Link to="/about" onClick={() => setMobileOpen(false)}>
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" onClick={() => setMobileOpen(false)}>
+                  Blog
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
