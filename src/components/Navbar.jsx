@@ -1,17 +1,33 @@
-// Navbar.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown } from "react-icons/fa";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(null);
+  const [logoText, setLogoText] = useState("");
+  const fullLogo = "NovaTech";
 
-  const menuItems = [
-    { name: "Home", path: "/" },
+  // ⌨️ Typewriter Effect with Reset
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      setLogoText(fullLogo.slice(0, index + 1));
+      index++;
+      if (index === fullLogo.length) {
+        setTimeout(() => {
+          index = 0;
+          setLogoText("");
+        }, 1500);
+      }
+    }, 200);
+    return () => clearInterval(interval);
+  }, []);
+
+  const menus = [
     {
       name: "Services",
-      submenu: [
+      links: [
         { name: "Web Development", path: "/services/web-development" },
         { name: "Mobile Apps", path: "/services/mobile-apps" },
         { name: "Cloud", path: "/services/cloud" },
@@ -19,76 +35,78 @@ export default function Navbar() {
       ],
     },
     {
-      name: "Industries",
-      submenu: [
-        { name: "Healthcare", path: "/industries/healthcare" },
-        { name: "Finance", path: "/industries/finance" },
-        { name: "Education", path: "/industries/education" },
-        { name: "E-Commerce", path: "/industries/ecommerce" },
-        { name: "Retail", path: "/industries/retail" },
+      name: "Products",
+      links: [
+        { name: "SaaS Platform", path: "/products/saas" },
+        { name: "ERP Tool", path: "/products/erp" },
+        { name: "Analytics Dashboard", path: "/products/analytics" },
+        { name: "E-Commerce Platform", path: "/products/ecommerce" },
+        { name: "HR Management", path: "/products/hrm" },
       ],
     },
     {
-      name: "Products",
-      submenu: [
-        { name: "CRM Software", path: "/products/crm" },
-        { name: "ERP System", path: "/products/erp" },
-        { name: "HR Management", path: "/products/hrm" },
-        { name: "E-Commerce Platform", path: "/products/ecommerce-platform" },
+      name: "Industries",
+      links: [
+        { name: "Healthcare", path: "/industries/healthcare" },
+        { name: "Finance", path: "/industries/finance" },
+        { name: "Education", path: "/industries/education" },
+        { name: "Retail", path: "/industries/retail" },
       ],
     },
-    { name: "Blog", path: "/blog" },
-    { name: "About Us", path: "/about" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-indigo-900 via-purple-800 to-indigo-900 shadow-lg">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/" className="text-2xl font-extrabold tracking-wide">
-          <motion.span
-            animate={{ backgroundPosition: ["0%", "200%"] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-            className="bg-gradient-to-r from-pink-400 via-yellow-400 to-cyan-400 bg-[length:200%_200%] bg-clip-text text-transparent drop-shadow-md animate-pulse"
-          >
-            Novetech
-          </motion.span>
-        </Link>
+    <nav className="fixed w-full top-0 left-0 z-50 bg-white shadow-md border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        
+        {/* 🔥 Gradient Flush Logo */}
+        <motion.h1
+          key={logoText}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.2 }}
+          className="text-3xl md:text-4xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+        >
+          {logoText}
+          <span className="animate-pulse text-cyan-500">|</span>
+        </motion.h1>
 
-        {/* Menu */}
-        <ul className="flex gap-8 text-white font-semibold relative">
-          {menuItems.map((item, idx) => (
+        {/* 🌐 Navbar Links */}
+        <ul className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+          <li>
+            <Link to="/" className="relative group">
+              Home
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-cyan-500 group-hover:w-full transition-all duration-300"></span>
+            </Link>
+          </li>
+
+          {menus.map((menu, idx) => (
             <li
               key={idx}
-              className="relative group"
-              onMouseEnter={() => item.submenu && setOpenMenu(idx)}
+              className="relative"
+              onMouseEnter={() => setOpenMenu(menu.name)}
               onMouseLeave={() => setOpenMenu(null)}
             >
-              <Link
-                to={item.path || "#"}
-                className="flex items-center gap-1 transition relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-yellow-400 after:transition-all after:duration-300 hover:after:w-full"
-              >
-                {item.name}
-                {item.submenu && <FaChevronDown size={12} className="ml-1" />}
-              </Link>
-
-              {/* Dropdown */}
+              <button className="flex items-center gap-1 relative group hover:text-cyan-600 transition">
+                {menu.name} <FaChevronDown className="text-xs mt-1" />
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-cyan-500 group-hover:w-full transition-all duration-300"></span>
+              </button>
               <AnimatePresence>
-                {openMenu === idx && item.submenu && (
+                {openMenu === menu.name && (
                   <motion.ul
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-10 left-0 bg-white text-gray-800 shadow-xl rounded-lg py-2 w-56"
+                    className="absolute top-10 left-0 bg-white text-gray-800 shadow-xl rounded-xl py-3 w-64 border border-gray-100"
                   >
-                    {item.submenu.map((sub, i) => (
+                    {menu.links.map((link, i) => (
                       <li key={i}>
                         <Link
-                          to={sub.path}
-                          className="block px-4 py-2 rounded-md hover:bg-indigo-600 hover:text-white transition"
+                          to={link.path}
+                          className="block px-4 py-2 rounded-lg hover:bg-cyan-50 hover:text-cyan-600 transition"
                         >
-                          {sub.name}
+                          {link.name}
                         </Link>
                       </li>
                     ))}
@@ -97,6 +115,19 @@ export default function Navbar() {
               </AnimatePresence>
             </li>
           ))}
+
+          <li>
+            <Link to="/about" className="relative group">
+              About Us
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-cyan-500 group-hover:w-full transition-all duration-300"></span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/blog" className="relative group">
+              Blog
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-cyan-500 group-hover:w-full transition-all duration-300"></span>
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
