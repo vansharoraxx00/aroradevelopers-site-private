@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Industries from "./pages/Industries";
@@ -31,6 +33,7 @@ import HRM from "./pages/products/HRM";
 function App() {
   return (
     <Router>
+      <ScrollToTop /> {/* 👈 Scroll behavior set */}
       <Navbar />
       <Routes>
         {/* Main Pages */}
