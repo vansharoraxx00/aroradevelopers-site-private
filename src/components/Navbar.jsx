@@ -7,7 +7,7 @@ export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(null);
   const [logoText, setLogoText] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
-  const fullLogo = "Eratos software";
+  const fullLogo = "Softprogrammer";
 
   // ⌨️ Typewriter Effect with Reset
   useEffect(() => {

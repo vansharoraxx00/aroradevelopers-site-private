@@ -46,7 +46,7 @@ export default function Home() {
           transition={{ delay: 0.4, duration: 1 }}
           className="text-lg max-w-3xl mx-auto mb-10 text-gray-600"
         >
-          Novetech delivers futuristic solutions in AI, Cloud, and Software
+          Softprogrammer delivers futuristic solutions in AI, Cloud, and Software
           Development. Our mission? To turn caffeine ☕ and code into
           world-changing technology.
         </motion.p>
@@ -92,7 +92,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 tracking-tight">
-            Why Choose <span className="text-indigo-600">Novetech?</span>
+            Why Choose <span className="text-indigo-600">Softprogrammer?</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-10">
             {[

@@ -35,7 +35,7 @@ export default function Footer() {
         {/* 🔹 Grid Layout */}
         <div className="grid md:grid-cols-4 gap-10 text-center md:text-left">
           <div>
-            <h2 className="text-2xl font-extrabold mb-4 tracking-wide text-gray-900">NovaTech</h2>
+            <h2 className="text-2xl font-extrabold mb-4 tracking-wide text-gray-900">Softprogrammer</h2>
             <p className="text-sm opacity-80 leading-relaxed">
               Empowering businesses with next-gen digital solutions.  
               Driving innovation across industries.
@@ -89,7 +89,7 @@ export default function Footer() {
 
         {/* Bottom Note */}
         <p className="text-center text-sm opacity-70">
-          © {new Date().getFullYear()} NovaTech. All Rights Reserved.
+          © {new Date().getFullYear()} Softprogrammer Inc. All Rights Reserved.
         </p>
       </div>
     </footer>
