@@ -2,28 +2,31 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import TermsPopup from "./components/TermsPopup"; // ✅ Added
 
+// ✅ Main Pages
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Industries from "./pages/Industries";
 import Products from "./pages/Products";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
+import ContactUs from "./pages/ContactUs";
 
-// Service detail pages
+// ✅ Services Pages
 import WebDev from "./pages/services/WebDev";
 import MobileApps from "./pages/services/MobileApps";
 import Cloud from "./pages/services/Cloud";
 import AI from "./pages/services/AI";
 
-// Industry detail pages
+// ✅ Industry Pages
 import Healthcare from "./pages/industries/Healthcare";
 import Finance from "./pages/industries/Finance";
 import Education from "./pages/industries/Education";
 import Ecommerce from "./pages/industries/Ecommerce";
 import Retail from "./pages/industries/Retail";
 
-// Product detail pages
+// ✅ Product Pages
 import SaaS from "./pages/products/SaaS";
 import ERP from "./pages/products/ERP";
 import Analytics from "./pages/products/Analytics";
@@ -33,37 +36,41 @@ import HRM from "./pages/products/HRM";
 function App() {
   return (
     <Router>
-      <ScrollToTop /> {/* 👈 Scroll behavior set */}
+      <ScrollToTop /> {/* 👈 Auto scroll on route change */}
       <Navbar />
+      <TermsPopup /> {/* ✅ Terms & Conditions popup on first visit */}
+
       <Routes>
-        {/* Main Pages */}
+        {/* 🏠 Main Pages */}
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
         <Route path="/industries" element={<Industries />} />
         <Route path="/products" element={<Products />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<ContactUs />} />
 
-        {/* Services */}
+        {/* 💼 Services */}
         <Route path="/services/web-development" element={<WebDev />} />
         <Route path="/services/mobile-apps" element={<MobileApps />} />
         <Route path="/services/cloud" element={<Cloud />} />
         <Route path="/services/ai-ml" element={<AI />} />
 
-        {/* Industries */}
+        {/* 🏭 Industries */}
         <Route path="/industries/healthcare" element={<Healthcare />} />
         <Route path="/industries/finance" element={<Finance />} />
         <Route path="/industries/education" element={<Education />} />
         <Route path="/industries/ecommerce" element={<Ecommerce />} />
         <Route path="/industries/retail" element={<Retail />} />
 
-        {/* Products */}
+        {/* 🛒 Products */}
         <Route path="/products/saas" element={<SaaS />} />
         <Route path="/products/erp" element={<ERP />} />
         <Route path="/products/analytics" element={<Analytics />} />
         <Route path="/products/ecommerce" element={<EcommercePlatform />} />
         <Route path="/products/hrm" element={<HRM />} />
       </Routes>
+
       <Footer />
     </Router>
   );
