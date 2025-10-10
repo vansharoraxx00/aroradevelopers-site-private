@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
-import LoginModal from "./LoginModal"; // 👈 Login Modal import
+import LoginModal from "./LoginModal";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(null);
   const [logoText, setLogoText] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [loginOpen, setLoginOpen] = useState(false); // 👈 State for modal
+  const [loginOpen, setLoginOpen] = useState(false);
   const fullLogo = "Softprogrammer";
+  const mobileMenuRef = useRef(null);
+  const navigate = useNavigate();
 
   // 🔤 Typewriter Effect
   useEffect(() => {
@@ -26,6 +28,21 @@ export default function Navbar() {
     }, 200);
     return () => clearInterval(interval);
   }, []);
+
+  // 👇 Close mobile menu on outside click
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
+        setMobileOpen(false);
+      }
+    }
+    if (mobileOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [mobileOpen]);
 
   // 🔗 Menus
   const menus = [
@@ -76,18 +93,28 @@ export default function Navbar() {
     <>
       <nav className="fixed w-full top-0 left-0 z-50 bg-white shadow-md border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* 🔥 Animated Logo */}
-          <motion.h1
-            key={logoText}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.2 }}
-            className="text-3xl md:text-4xl font-extrabold tracking-wide bg-gradient-to-r from-purple-700 to-pink-500 text-transparent bg-clip-text drop-shadow-[2px_2px_4px_rgba(0,0,0,0.4)]"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
+          {/* 🔥 Animated Logo (Clickable) */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              navigate("/");
+              setMobileOpen(false); // close mobile nav if open
+            }}
+            className="cursor-pointer flex items-center gap-2"
           >
-            {logoText}
-            <span className="animate-pulse text-red-500">|</span>
-          </motion.h1>
+            <motion.h1
+              key={logoText}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.2 }}
+              className="text-3xl md:text-4xl font-extrabold tracking-wide bg-gradient-to-r from-purple-700 to-pink-500 text-transparent bg-clip-text drop-shadow-[2px_2px_4px_rgba(0,0,0,0.4)] select-none"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
+            >
+              {logoText}
+              <span className="animate-pulse text-red-500">|</span>
+            </motion.h1>
+          </motion.div>
 
           {/* 🌐 Desktop Navbar */}
           <ul className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
@@ -173,6 +200,7 @@ export default function Navbar() {
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
+              ref={mobileMenuRef}
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -217,7 +245,10 @@ export default function Navbar() {
                 </li>
                 <li>
                   <button
-                    onClick={() => { setLoginOpen(true); setMobileOpen(false); }}
+                    onClick={() => {
+                      setLoginOpen(true);
+                      setMobileOpen(false);
+                    }}
                     className="block hover:text-purple-600"
                   >
                     Login
