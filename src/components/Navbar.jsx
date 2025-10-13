@@ -3,31 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 import LoginModal from "./LoginModal";
+import logo from "../assets/logo.jpeg";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(null);
-  const [logoText, setLogoText] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
-  const fullLogo = "Softprogrammer";
   const mobileMenuRef = useRef(null);
   const navigate = useNavigate();
-
-  // 🔤 Typewriter Effect
-  useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      setLogoText(fullLogo.slice(0, index + 1));
-      index++;
-      if (index === fullLogo.length) {
-        setTimeout(() => {
-          index = 0;
-          setLogoText("");
-        }, 1500);
-      }
-    }, 200);
-    return () => clearInterval(interval);
-  }, []);
 
   // 👇 Close mobile menu on outside click
   useEffect(() => {
@@ -93,7 +76,7 @@ export default function Navbar() {
     <>
       <nav className="fixed w-full top-0 left-0 z-50 bg-white shadow-md border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* 🔥 Animated Logo (Clickable) */}
+          {/* 🔥 Logo Image (Clickable) */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -103,17 +86,14 @@ export default function Navbar() {
             }}
             className="cursor-pointer flex items-center gap-2"
           >
-            <motion.h1
-              key={logoText}
+            <motion.img
+              src={logo} // 🖼️ your logo image path
+              alt="Softprogrammer Logo"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.2 }}
-              className="text-3xl md:text-4xl font-extrabold tracking-wide bg-gradient-to-r from-purple-700 to-pink-500 text-transparent bg-clip-text drop-shadow-[2px_2px_4px_rgba(0,0,0,0.4)] select-none"
-              style={{ fontFamily: "'Poppins', sans-serif" }}
-            >
-              {logoText}
-              <span className="animate-pulse text-red-500">|</span>
-            </motion.h1>
+              transition={{ duration: 0.5 }}
+              className="h-10 md:h-12 object-contain select-none"
+            />
           </motion.div>
 
           {/* 🌐 Desktop Navbar */}
