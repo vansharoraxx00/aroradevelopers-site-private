@@ -59,9 +59,8 @@ export default function Navbar() {
     {
       name: "Company",
       links: [
-        { name: "About Us", path: "/about" },
         { name: "Careers", path: "/careers" },
-        { name: "Contact Us", path: "/contact" },
+        { name: "Blogs", path: "/blogs" },
       ],
     },
   ];
@@ -96,6 +95,7 @@ export default function Navbar() {
               </Link>
             </li>
 
+            {/* Dropdown Menus */}
             {menus.map((menu, idx) => (
               <li
                 key={idx}
@@ -116,10 +116,10 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className={`absolute top-10 left-0 bg-white text-gray-800 shadow-xl rounded-xl py-4 px-4 border border-gray-100 ${
+                      className={`absolute top-10 left-1/2 transform -translate-x-1/2 bg-white text-gray-800 shadow-2xl rounded-xl py-4 px-6 border border-gray-100 max-h-[350px] overflow-y-auto ${
                         menu.name === "Software"
-                          ? "grid grid-cols-2 gap-2 w-[480px]"
-                          : "block w-64"
+                          ? "grid grid-cols-2 gap-3 w-[550px]"
+                          : "w-64"
                       }`}
                     >
                       {menu.links.map((link, i) => (
@@ -138,6 +138,19 @@ export default function Navbar() {
               </li>
             ))}
 
+            {/* Separate Static Links */}
+            <li>
+              <Link to="/about" className="relative group">
+                About Us
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-purple-500 group-hover:w-full transition-all duration-300"></span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="relative group">
+                Contact Us
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-purple-500 group-hover:w-full transition-all duration-300"></span>
+              </Link>
+            </li>
             <li>
               <button
                 onClick={() => setLoginOpen(true)}
@@ -195,6 +208,16 @@ export default function Navbar() {
                   </li>
                 ))}
 
+                <li>
+                  <Link to="/about" onClick={() => setMobileOpen(false)}>
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" onClick={() => setMobileOpen(false)}>
+                    Contact Us
+                  </Link>
+                </li>
                 <li>
                   <button
                     onClick={() => {
