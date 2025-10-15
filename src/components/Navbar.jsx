@@ -12,62 +12,56 @@ export default function Navbar() {
   const mobileMenuRef = useRef(null);
   const navigate = useNavigate();
 
-  // 👇 Close mobile menu on outside click
+  // 🧠 Close mobile menu on outside click
   useEffect(() => {
     function handleClickOutside(event) {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
         setMobileOpen(false);
       }
     }
-    if (mobileOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
+    if (mobileOpen) document.addEventListener("mousedown", handleClickOutside);
+    else document.removeEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [mobileOpen]);
 
-  // 🔗 Menus
+  // 🔗 Menus setup
   const menus = [
     {
-      name: "Services",
+      name: "Products",
       links: [
-        { name: "Web Development", path: "/services/web-development" },
-        { name: "Mobile Apps", path: "/services/mobile-apps" },
-        { name: "Cloud", path: "/services/cloud" },
-        { name: "AI & ML", path: "/services/ai-ml" },
+        { name: "Time", path: "/products/time" },
+        { name: "Toucan", path: "/products/toucan" },
+        { name: "IE Products", path: "/products/ie" },
       ],
     },
     {
       name: "Software",
       links: [
-        { name: "Products", path: "/products/accounting" },
-        { name: "Enterprise Resource Planning", path: "/products/erp" },
-        { name: "Global Business Management", path: "/products/global-business" },
-        { name: "Customer Relation Management", path: "/products/crm" },
-        { name: "Supply Chain Management", path: "/products/supply-chain" },
-        { name: "Human Capital Management", path: "/products/hcm" },
-        { name: "Human Resource Information System", path: "/products/hris" },
-        { name: "Restaurant Management", path: "/products/restaurant" },
-        { name: "Prescription Management", path: "/products/prescription" },
-        { name: "Professional Services Automation", path: "/products/psa" },
-        { name: "Contract Lifecycle Management", path: "/products/clm" },
-        { name: "Business Spend Management", path: "/products/spend" },
-        { name: "Merchandise", path: "/products/merchandise" },
-        { name: "Outsourcing", path: "/products/outsourcing" },
-        { name: "Multi-Seller Marketplace", path: "/products/multi-seller" },
-        { name: "Distributor Portal", path: "/products/distributor" },
-        { name: "Omnichannel Commerce", path: "/products/omnichannel" },
-        { name: "Analytics & Reporting", path: "/products/analytics-reporting" },
+        { name: "Enterprise Resource Planning", path: "/software/erp" },
+        { name: "Global Business Management", path: "/software/global-business" },
+        { name: "Customer Relation Management", path: "/software/crm" },
+        { name: "Supply Chain Management", path: "/software/supply-chain" },
+        { name: "Human Capital Management", path: "/software/hcm" },
+        { name: "Human Resource Information System", path: "/software/hris" },
+        { name: "Restaurant Management", path: "/software/restaurant" },
+        { name: "Prescription Management", path: "/software/prescription" },
+        { name: "Professional Services Automation", path: "/software/psa" },
+        { name: "Contract Lifecycle Management", path: "/software/clm" },
+        { name: "Business Spend Management", path: "/software/spend" },
+        { name: "Merchandise", path: "/software/merchandise" },
+        { name: "Outsourcing", path: "/software/outsourcing" },
+        { name: "Multi-Seller Marketplace", path: "/software/multi-seller" },
+        { name: "Distributor Portal", path: "/software/distributor" },
+        { name: "Omnichannel Commerce", path: "/software/omnichannel" },
+        { name: "Analytics & Reporting", path: "/software/analytics-reporting" },
       ],
     },
     {
-      name: "Industries",
+      name: "Company",
       links: [
-        { name: "Healthcare", path: "/industries/healthcare" },
-        { name: "Finance", path: "/industries/finance" },
-        { name: "Education", path: "/industries/education" },
-        { name: "Retail", path: "/industries/retail" },
+        { name: "About Us", path: "/about" },
+        { name: "Careers", path: "/careers" },
+        { name: "Contact Us", path: "/contact" },
       ],
     },
   ];
@@ -76,18 +70,15 @@ export default function Navbar() {
     <>
       <nav className="fixed w-full top-0 left-0 z-50 bg-white shadow-md border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* 🔥 Logo Image (Clickable) */}
+          {/* 🔥 Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => {
-              navigate("/");
-              setMobileOpen(false); // close mobile nav if open
-            }}
+            onClick={() => navigate("/")}
             className="cursor-pointer flex items-center gap-2"
           >
             <motion.img
-              src={logo} // 🖼️ your logo image path
+              src={logo}
               alt="Softprogrammer Logo"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -125,8 +116,11 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className={`absolute top-10 left-0 bg-white text-gray-800 shadow-xl rounded-xl py-4 px-4 border border-gray-100
-                      ${menu.name === "Products" ? "grid grid-cols-2 gap-2 w-[480px]" : "block w-64"}`}
+                      className={`absolute top-10 left-0 bg-white text-gray-800 shadow-xl rounded-xl py-4 px-4 border border-gray-100 ${
+                        menu.name === "Software"
+                          ? "grid grid-cols-2 gap-2 w-[480px]"
+                          : "block w-64"
+                      }`}
                     >
                       {menu.links.map((link, i) => (
                         <li key={i}>
@@ -144,18 +138,6 @@ export default function Navbar() {
               </li>
             ))}
 
-            <li>
-              <Link to="/about" className="relative group">
-                About Us
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-purple-500 group-hover:w-full transition-all duration-300"></span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="relative group">
-                Contact Us
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-purple-500 group-hover:w-full transition-all duration-300"></span>
-              </Link>
-            </li>
             <li>
               <button
                 onClick={() => setLoginOpen(true)}
@@ -213,16 +195,6 @@ export default function Navbar() {
                   </li>
                 ))}
 
-                <li>
-                  <Link to="/about" onClick={() => setMobileOpen(false)}>
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact" onClick={() => setMobileOpen(false)}>
-                    Contact Us
-                  </Link>
-                </li>
                 <li>
                   <button
                     onClick={() => {
