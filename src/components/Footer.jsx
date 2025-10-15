@@ -74,7 +74,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-6 text-center md:text-left">
           {/* Products */}
           <div>
-            <h3 className="text-lg font-semibold mb-3 text-indigo-600">Products</h3>
+            <h3 className="text-lg font-semibold mb-3 text-indigo-600">Software </h3>
             <ul className="space-y-2 text-sm opacity-90 max-h-52 overflow-y-auto pr-2 custom-scrollbar">
               {products.map((p, i) => (
                 <li key={i}><Link to={p.path} className="hover:text-indigo-500">{p.name}</Link></li>
