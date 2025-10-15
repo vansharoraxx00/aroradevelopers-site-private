@@ -39,7 +39,7 @@ export default function Navbar() {
       ],
     },
     {
-      name: "Products",
+      name: "Software",
       links: [
         { name: "Enterprise Resource Planning", path: "/products/erp" },
         { name: "Accounting Software", path: "/products/accounting" },
