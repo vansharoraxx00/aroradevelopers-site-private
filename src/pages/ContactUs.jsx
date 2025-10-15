@@ -1,34 +1,36 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function ContactUs() {
   const styles = {
     wrapper: {
       display: "flex",
       justifyContent: "center",
-      alignItems: "center",
-      padding: "40px 20px",
+      alignItems: "flex-start",
+      padding: "120px 20px 60px", // top padding for navbar
       background: "linear-gradient(to right, #f9f9f9, #e0f7ff)",
       minHeight: "calc(100vh - 80px)",
     },
     card: {
       backgroundColor: "#ffffff",
-      padding: "40px",
+      padding: "50px 40px",
       maxWidth: "600px",
       width: "100%",
       borderRadius: "16px",
-      boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+      boxShadow: "0 15px 40px rgba(0,0,0,0.1)",
       fontFamily: "'Segoe UI', sans-serif",
     },
     title: {
-      fontSize: "30px",
-      fontWeight: "600",
+      fontSize: "32px",
+      fontWeight: "700",
       color: "#333",
-      marginBottom: "10px",
+      marginBottom: "12px",
     },
     subtitle: {
       fontSize: "16px",
       color: "#666",
-      marginBottom: "30px",
+      marginBottom: "35px",
+      lineHeight: 1.5,
     },
     formGroup: {
       marginBottom: "20px",
@@ -36,7 +38,7 @@ export default function ContactUs() {
     label: {
       display: "block",
       marginBottom: "8px",
-      fontWeight: "500",
+      fontWeight: "600",
       color: "#333",
     },
     input: {
@@ -45,7 +47,8 @@ export default function ContactUs() {
       borderRadius: "8px",
       border: "1px solid #ccc",
       fontSize: "16px",
-      transition: "border-color 0.3s",
+      transition: "all 0.3s",
+      outline: "none",
     },
     textarea: {
       width: "100%",
@@ -54,8 +57,9 @@ export default function ContactUs() {
       border: "1px solid #ccc",
       fontSize: "16px",
       resize: "vertical",
-      minHeight: "120px",
-      transition: "border-color 0.3s",
+      minHeight: "140px",
+      transition: "all 0.3s",
+      outline: "none",
     },
     button: {
       width: "100%",
@@ -67,13 +71,18 @@ export default function ContactUs() {
       border: "none",
       borderRadius: "8px",
       cursor: "pointer",
-      transition: "background-color 0.3s",
+      transition: "all 0.3s",
     },
   };
 
   return (
     <div style={styles.wrapper}>
-      <div style={styles.card}>
+      <motion.div
+        style={styles.card}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <h2 style={styles.title}>Contact Us</h2>
         <p style={styles.subtitle}>
           We'd love to hear from you! Fill out the form and we’ll get back to you shortly.
@@ -121,16 +130,17 @@ export default function ContactUs() {
             />
           </div>
 
-          <button
+          <motion.button
             type="submit"
             style={styles.button}
-            onMouseOver={(e) => (e.target.style.backgroundColor = "#0056b3")}
-            onMouseOut={(e) => (e.target.style.backgroundColor = "#007bff")}
+            whileHover={{ scale: 1.03, backgroundColor: "#0056b3" }}
+            whileTap={{ scale: 0.97 }}
+            onClick={(e) => e.preventDefault()} // temporary, replace with form handler
           >
             Send Message
-          </button>
+          </motion.button>
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 }
