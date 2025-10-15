@@ -12,7 +12,7 @@ export default function Navbar() {
   const mobileMenuRef = useRef(null);
   const navigate = useNavigate();
 
-  // 🧠 Close mobile menu on outside click
+  // Close mobile menu on outside click
   useEffect(() => {
     function handleClickOutside(event) {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
@@ -24,13 +24,12 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [mobileOpen]);
 
-  // 🔗 Menus setup
+  // Menus
   const menus = [
     {
       name: "Products",
       links: [
-        { name: "Time", path: "/products/time" },
-        { name: "Toucan", path: "/products/toucan" },
+        { name: "Timetoucan", path: "/products/timetoucan" },
         { name: "IE Products", path: "/products/ie" },
       ],
     },
@@ -69,7 +68,7 @@ export default function Navbar() {
     <>
       <nav className="fixed w-full top-0 left-0 z-50 bg-white shadow-md border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* 🔥 Logo */}
+          {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -86,7 +85,7 @@ export default function Navbar() {
             />
           </motion.div>
 
-          {/* 🌐 Desktop Navbar */}
+          {/* Desktop Navbar */}
           <ul className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
             <li>
               <Link to="/" className="relative group">
@@ -95,7 +94,6 @@ export default function Navbar() {
               </Link>
             </li>
 
-            {/* Dropdown Menus */}
             {menus.map((menu, idx) => (
               <li
                 key={idx}
@@ -108,7 +106,7 @@ export default function Navbar() {
                   <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-purple-500 group-hover:w-full transition-all duration-300"></span>
                 </button>
 
-                {/* 🧭 Dropdown */}
+                {/* Dropdown */}
                 <AnimatePresence>
                   {openMenu === menu.name && (
                     <motion.ul
@@ -116,10 +114,10 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className={`absolute top-10 left-1/2 transform -translate-x-1/2 bg-white text-gray-800 shadow-2xl rounded-xl py-4 px-6 border border-gray-100 max-h-[350px] overflow-y-auto ${
+                      className={`absolute top-10 left-1/2 transform -translate-x-1/2 bg-white text-gray-800 shadow-2xl rounded-xl py-4 px-6 border border-gray-100 overflow-y-auto ${
                         menu.name === "Software"
-                          ? "grid grid-cols-2 gap-3 w-[550px]"
-                          : "w-64"
+                          ? "grid grid-cols-2 gap-3 w-[550px] max-h-[400px] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
+                          : "w-64 max-h-[300px]"
                       }`}
                     >
                       {menu.links.map((link, i) => (
@@ -138,7 +136,7 @@ export default function Navbar() {
               </li>
             ))}
 
-            {/* Separate Static Links */}
+            {/* Separate Links */}
             <li>
               <Link to="/about" className="relative group">
                 About Us
@@ -162,7 +160,7 @@ export default function Navbar() {
             </li>
           </ul>
 
-          {/* 📱 Mobile Hamburger */}
+          {/* Mobile Hamburger */}
           <button
             className="md:hidden text-2xl text-gray-700"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -171,7 +169,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* 📱 Mobile Menu */}
+        {/* Mobile Menu */}
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
@@ -235,7 +233,7 @@ export default function Navbar() {
         </AnimatePresence>
       </nav>
 
-      {/* 🔒 Login Modal */}
+      {/* Login Modal */}
       <LoginModal isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
     </>
   );
