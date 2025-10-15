@@ -38,7 +38,7 @@ export default function Navbar() {
     {
       name: "Software",
       links: [
-        { name: "Enterprise Resource Planning", path: "/software/erp" },
+        { name: "Enterprise Resource Planning", path: "/products/erp" },
         { name: "Global Business Management", path: "/software/global-business" },
         { name: "Customer Relation Management", path: "/software/crm" },
         { name: "Supply Chain Management", path: "/software/supply-chain" },
