@@ -24,12 +24,13 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [mobileOpen]);
 
-  // Menus
+  // Navbar menus
   const menus = [
     {
       name: "Products",
       links: [
-        { name: "Timetoucan", path: "/products/timetoucan" },
+        { name: "Time", path: "/products/time" },
+        { name: "Toucan", path: "/products/toucan" },
         { name: "IE Products", path: "/products/ie" },
       ],
     },
@@ -114,9 +115,9 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className={`absolute top-10 left-1/2 transform -translate-x-1/2 bg-white text-gray-800 shadow-2xl rounded-xl py-4 px-6 border border-gray-100 overflow-y-auto ${
+                      className={`absolute top-10 left-0 bg-white text-gray-800 shadow-2xl rounded-xl py-4 px-4 border border-gray-100 overflow-y-auto ${
                         menu.name === "Software"
-                          ? "grid grid-cols-2 gap-3 w-[550px] max-h-[400px] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
+                          ? "grid grid-cols-2 gap-3 w-[520px] max-h-[350px] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
                           : "w-64 max-h-[300px]"
                       }`}
                     >
