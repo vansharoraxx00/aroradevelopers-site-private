@@ -29,9 +29,10 @@ export default function Navbar() {
     {
       name: "Products",
       links: [
-        { name: "Time", path: "/products/time" },
-        { name: "Toucan", path: "/products/toucan" },
+        { name: "Timetoucan", path: "/products/timetoucan" },
         { name: "IE Products", path: "/products/ie" },
+        { name: "Analytics & Reporting", path: "/products/analtics" },
+       
       ],
     },
     {
