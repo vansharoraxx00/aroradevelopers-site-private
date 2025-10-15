@@ -19,7 +19,17 @@ export default function Footer() {
     { icon: <FaInstagram />, link: "https://instagram.com" },
   ];
 
+  // ✅ Product list
   const products = [
+    { name: "Intelligent Enterprise (IE)", path: "/products/intelligent-enterprise" },
+    { name: "Time Toucan", path: "/products/time-toucan" },
+    { name: "Analytics & Reporting", path: "/products/analytics-reporting" },
+    { name: "Professional Services Automation", path: "/products/psa" },
+    { name: "Contract Lifecycle Management", path: "/products/clm" },
+  ];
+
+  // ✅ Software list
+  const software = [
     { name: "Enterprise Resource Planning", path: "/products/erp" },
     { name: "Accounting Software", path: "/products/accounting" },
     { name: "Global Business Management", path: "/products/global-business" },
@@ -29,17 +39,15 @@ export default function Footer() {
     { name: "Human Resource Information System", path: "/products/hris" },
     { name: "Restaurant Management", path: "/products/restaurant" },
     { name: "Prescription Management", path: "/products/prescription" },
-    { name: "Professional Services Automation", path: "/products/psa" },
-    { name: "Contract Lifecycle Management", path: "/products/clm" },
     { name: "Business Spend Management", path: "/products/spend" },
     { name: "Merchandise", path: "/products/merchandise" },
     { name: "Outsourcing", path: "/products/outsourcing" },
     { name: "Multi-Seller Marketplace", path: "/products/multi-seller" },
     { name: "Distributor Portal", path: "/products/distributor" },
     { name: "Omnichannel Commerce", path: "/products/omnichannel" },
-    { name: "Analytics & Reporting", path: "/products/analytics-reporting" },
   ];
 
+  // ✅ Company list
   const companyLinks = [
     { name: "FAQ", path: "/faq" },
     { name: "Blog", path: "/blog" },
@@ -71,13 +79,31 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Grid Layout */}
-        <div className="grid md:grid-cols-3 gap-6 text-center md:text-left">
+        <div className="grid md:grid-cols-4 gap-6 text-center md:text-left">
           {/* Products */}
           <div>
-            <h3 className="text-lg font-semibold mb-3 text-indigo-600">Software </h3>
+            <h3 className="text-lg font-semibold mb-3 text-indigo-600">Products</h3>
             <ul className="space-y-2 text-sm opacity-90 max-h-52 overflow-y-auto pr-2 custom-scrollbar">
               {products.map((p, i) => (
-                <li key={i}><Link to={p.path} className="hover:text-indigo-500">{p.name}</Link></li>
+                <li key={i}>
+                  <Link to={p.path} className="hover:text-indigo-500">
+                    {p.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Software */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3 text-indigo-600">Software</h3>
+            <ul className="space-y-2 text-sm opacity-90 max-h-52 overflow-y-auto pr-2 custom-scrollbar">
+              {software.map((s, i) => (
+                <li key={i}>
+                  <Link to={s.path} className="hover:text-indigo-500">
+                    {s.name}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -87,7 +113,11 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-3 text-indigo-600">Company</h3>
             <ul className="space-y-2 text-sm opacity-90 mb-5">
               {companyLinks.map((c, i) => (
-                <li key={i}><Link to={c.path} className="hover:text-indigo-500">{c.name}</Link></li>
+                <li key={i}>
+                  <Link to={c.path} className="hover:text-indigo-500">
+                    {c.name}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -101,23 +131,42 @@ export default function Footer() {
               </li>
               <li className="flex items-center justify-center md:justify-start gap-2">
                 <FaPhoneAlt className="text-indigo-600" />
-                <a href="tel:+14155550123" className="hover:text-indigo-500">+1 (415) 555-0123</a>
+                <a href="tel:+14155550123" className="hover:text-indigo-500">
+                  +510-512-2896
+                </a>
               </li>
               <li className="flex items-center justify-center md:justify-start gap-2">
                 <FaEnvelope className="text-indigo-600" />
-                <a href="mailto:info@softprogrammer.com" className="hover:text-indigo-500">info@softprogrammer.com</a>
+                <a href="mailto:info@softprogrammer.com" className="hover:text-indigo-500">
+                  support@softprogrammer.com
+                </a>
               </li>
             </ul>
 
             {/* Newsletter */}
             <form
-              onSubmit={(e) => { e.preventDefault(); alert("✅ Subscribed successfully!"); }}
+              onSubmit={(e) => {
+                e.preventDefault();
+                alert("✅ Subscribed successfully!");
+              }}
               className="flex items-center border border-gray-300 rounded-full overflow-hidden focus-within:ring-2 focus-within:ring-indigo-400 transition"
             >
-              <input type="email" required placeholder="Enter your email" className="w-full px-4 py-2 text-sm outline-none bg-transparent" />
-              <button type="submit" className="bg-indigo-600 text-white px-5 py-2 font-medium hover:bg-indigo-700 transition">Subscribe</button>
+              <input
+                type="email"
+                required
+                placeholder="Enter your email"
+                className="w-full px-4 py-2 text-sm outline-none bg-transparent"
+              />
+              <button
+                type="submit"
+                className="bg-indigo-600 text-white px-5 py-2 font-medium hover:bg-indigo-700 transition"
+              >
+                Subscribe
+              </button>
             </form>
-            <p className="text-xs text-gray-500 mt-3 text-center md:text-left">Subscribe to our newsletter 📬</p>
+            <p className="text-xs text-gray-500 mt-3 text-center md:text-left">
+              Subscribe to our newsletter 📬
+            </p>
           </div>
         </div>
 
