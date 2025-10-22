@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 import LoginModal from "./LoginModal";
-import logo from "../assets/logo.jpeg";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(null);
@@ -12,7 +11,6 @@ export default function Navbar() {
   const mobileMenuRef = useRef(null);
   const navigate = useNavigate();
 
-  // Close mobile menu on outside click
   useEffect(() => {
     function handleClickOutside(event) {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
@@ -24,7 +22,6 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [mobileOpen]);
 
-  // Navbar menus
   const menus = [
     {
       name: "Products",
@@ -32,7 +29,6 @@ export default function Navbar() {
         { name: "Timetoucan", path: "/products/timetoucan" },
         { name: "IE Products", path: "/products/ie" },
         { name: "Analytics & Reporting", path: "/products/analtics" },
-       
       ],
     },
     {
@@ -70,22 +66,30 @@ export default function Navbar() {
     <>
       <nav className="fixed w-full top-0 left-0 z-50 bg-white shadow-md border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          {/* --- Animated Text Logo --- */}
+          <div
             onClick={() => navigate("/")}
-            className="cursor-pointer flex items-center gap-2"
+            className="cursor-pointer select-none flex flex-col items-start leading-tight"
           >
-            <motion.img
-              src={logo}
-              alt="Softprogrammer Logo"
+            <motion.h1
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="h-10 md:h-12 object-contain select-none"
-            />
-          </motion.div>
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 tracking-[0.5em] uppercase"
+              style={{
+                fontFamily: "'Bebas Neue', sans-serif",
+              }}
+            >
+              SOFTPROGRAMMER
+            </motion.h1>
+            <p className="text-[12px] md:text-sm text-gray-600 tracking-wide mt-0.5">
+              Software programmed for business success
+            </p>
+          </div>
 
           {/* Desktop Navbar */}
           <ul className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
@@ -108,7 +112,6 @@ export default function Navbar() {
                   <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-purple-500 group-hover:w-full transition-all duration-300"></span>
                 </button>
 
-                {/* Dropdown */}
                 <AnimatePresence>
                   {openMenu === menu.name && (
                     <motion.ul
@@ -138,7 +141,6 @@ export default function Navbar() {
               </li>
             ))}
 
-            {/* Separate Links */}
             <li>
               <Link to="/about" className="relative group">
                 About Us
@@ -237,6 +239,12 @@ export default function Navbar() {
 
       {/* Login Modal */}
       <LoginModal isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
+
+      {/* Import Font */}
+      <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+        rel="stylesheet"
+      />
     </>
   );
 }
