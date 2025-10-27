@@ -1,4 +1,5 @@
 import React from "react";
+import { SiNextdotjs } from "react-icons/si";
 import { motion } from "framer-motion";
 import {
   SiReact,
@@ -36,6 +37,7 @@ export default function Home() {
     { icon: <SiFlutter className="text-sky-400" />, name: "Flutter", desc: "Cross-platform mobile apps." },
     { icon: <SiTensorflow className="text-orange-500" />, name: "TensorFlow", desc: "Machine Learning & AI models." },
     { icon: <SiMongodb className="text-green-500" />, name: "MongoDB", desc: "NoSQL database for modern apps." },
+    { icon: <SiNextdotjs className="text-gray-800" />, name: "Next.js", desc: "React framework for fast, SEO-friendly web apps." },
     { icon: <SiAwsamplify className="text-orange-400" />, name: "AWS", desc: "Cloud infrastructure & services." },
   ];
 
