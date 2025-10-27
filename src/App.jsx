@@ -33,12 +33,18 @@ import Analytics from "./pages/products/Analytics";
 import EcommercePlatform from "./pages/products/EcommercePlatform";
 import HRM from "./pages/products/HRM";
 
+// ✅ Blog Pages
+import BlogERP from "./pages/BlogERP"; // 🆕 Added your ERP blog page
+
 function App() {
   return (
     <Router>
-      <ScrollToTop /> {/* 👈 Auto scroll on route change */}
+      {/* 👇 Auto scroll to top on every route change */}
+      <ScrollToTop />
+
+      {/* 🌐 Global Components */}
       <Navbar />
-      <TermsPopup /> {/* ✅ Terms & Conditions popup on first visit */}
+      <TermsPopup /> {/* ✅ Terms & Conditions popup */}
 
       <Routes>
         {/* 🏠 Main Pages */}
@@ -69,8 +75,15 @@ function App() {
         <Route path="/products/analytics" element={<Analytics />} />
         <Route path="/products/ecommerce" element={<EcommercePlatform />} />
         <Route path="/products/hrm" element={<HRM />} />
+
+        {/* 📝 Blog Pages */}
+        <Route
+          path="/blog/what-is-an-erp-system-and-why-every-business-needs-one"
+          element={<BlogERP />}
+        />
       </Routes>
 
+      {/* 🧭 Global Footer */}
       <Footer />
     </Router>
   );
