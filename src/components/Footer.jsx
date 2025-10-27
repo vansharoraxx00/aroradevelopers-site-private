@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   FaFacebookF,
@@ -19,17 +19,7 @@ export default function Footer() {
     { icon: <FaInstagram />, link: "https://instagram.com" },
   ];
 
-  // ✅ Product list
   const products = [
-    { name: "Intelligent Enterprise (IE)", path: "/products/intelligent-enterprise" },
-    { name: "Time Toucan", path: "/products/time-toucan" },
-    { name: "Analytics & Reporting", path: "/products/analytics-reporting" },
-    { name: "Professional Services Automation", path: "/products/psa" },
-    { name: "Contract Lifecycle Management", path: "/products/clm" },
-  ];
-
-  // ✅ Software list
-  const software = [
     { name: "Enterprise Resource Planning", path: "/products/erp" },
     { name: "Accounting Software", path: "/products/accounting" },
     { name: "Global Business Management", path: "/products/global-business" },
@@ -39,15 +29,17 @@ export default function Footer() {
     { name: "Human Resource Information System", path: "/products/hris" },
     { name: "Restaurant Management", path: "/products/restaurant" },
     { name: "Prescription Management", path: "/products/prescription" },
+    { name: "Professional Services Automation", path: "/products/psa" },
+    { name: "Contract Lifecycle Management", path: "/products/clm" },
     { name: "Business Spend Management", path: "/products/spend" },
     { name: "Merchandise", path: "/products/merchandise" },
     { name: "Outsourcing", path: "/products/outsourcing" },
     { name: "Multi-Seller Marketplace", path: "/products/multi-seller" },
     { name: "Distributor Portal", path: "/products/distributor" },
     { name: "Omnichannel Commerce", path: "/products/omnichannel" },
+    { name: "Analytics & Reporting", path: "/products/analytics-reporting" },
   ];
 
-  // ✅ Company list
   const companyLinks = [
     { name: "FAQ", path: "/faq" },
     { name: "Blog", path: "/blog" },
@@ -79,7 +71,7 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Grid Layout */}
-        <div className="grid md:grid-cols-4 gap-6 text-center md:text-left">
+        <div className="grid md:grid-cols-3 gap-6 text-center md:text-left">
           {/* Products */}
           <div>
             <h3 className="text-lg font-semibold mb-3 text-indigo-600">Products</h3>
@@ -88,20 +80,6 @@ export default function Footer() {
                 <li key={i}>
                   <Link to={p.path} className="hover:text-indigo-500">
                     {p.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Software */}
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-indigo-600">Software</h3>
-            <ul className="space-y-2 text-sm opacity-90 max-h-52 overflow-y-auto pr-2 custom-scrollbar">
-              {software.map((s, i) => (
-                <li key={i}>
-                  <Link to={s.path} className="hover:text-indigo-500">
-                    {s.name}
                   </Link>
                 </li>
               ))}
@@ -132,13 +110,16 @@ export default function Footer() {
               <li className="flex items-center justify-center md:justify-start gap-2">
                 <FaPhoneAlt className="text-indigo-600" />
                 <a href="tel:+14155550123" className="hover:text-indigo-500">
-                  +510-512-2896
+                  +1 (415) 555-0123
                 </a>
               </li>
               <li className="flex items-center justify-center md:justify-start gap-2">
                 <FaEnvelope className="text-indigo-600" />
-                <a href="mailto:info@softprogrammer.com" className="hover:text-indigo-500">
-                  support@softprogrammer.com
+                <a
+                  href="mailto:info@softprogrammer.com"
+                  className="hover:text-indigo-500"
+                >
+                  info@softprogrammer.com
                 </a>
               </li>
             </ul>
@@ -178,19 +159,29 @@ export default function Footer() {
           <p className="text-sm opacity-70 text-center md:text-left">
             © {new Date().getFullYear()} Softprogrammer. All Rights Reserved.
           </p>
+
           <div className="flex gap-4">
-            {socials.map((s, i) => (
-              <motion.a
-                key={i}
-                href={s.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.2, rotate: 8 }}
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-indigo-600 hover:bg-indigo-600 hover:text-white transition"
-              >
-                {s.icon}
-              </motion.a>
-            ))}
+            {socials.map((s, i) => {
+              const controls = useAnimation();
+
+              return (
+                <motion.a
+                  key={i}
+                  href={s.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{
+                    rotate: [0, 360],
+                    scale: [1, 1.5, 1],
+                    transition: { duration: 0.6 },
+                  }}
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-indigo-600 hover:bg-indigo-600 hover:text-white transition"
+                >
+                  {s.icon}
+                </motion.a>
+              );
+            })}
           </div>
         </div>
       </div>

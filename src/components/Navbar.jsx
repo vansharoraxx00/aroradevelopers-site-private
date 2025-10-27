@@ -32,7 +32,7 @@ export default function Navbar() {
       ],
     },
     {
-      name: "Software",
+      name: "Solution",
       links: [
         { name: "Enterprise Resource Planning", path: "/products/erp" },
         { name: "Global Business Management", path: "/software/global-business" },
@@ -57,7 +57,7 @@ export default function Navbar() {
       name: "Company",
       links: [
         { name: "Careers", path: "/careers" },
-        { name: "Blogs", path: "/blogs" },
+        { name: "Blog", path: "/blog" },
       ],
     },
   ];
@@ -71,25 +71,60 @@ export default function Navbar() {
             onClick={() => navigate("/")}
             className="cursor-pointer select-none flex flex-col items-start leading-tight"
           >
+            {/* Animated SOFTPROGRAMMER with typing effect */}
             <motion.h1
-              initial={{ opacity: 0 }}
-              animate={{ opacity: [0, 1, 0] }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 tracking-[0.5em] uppercase"
+              className="text-2xl md:text-3xl font-extrabold uppercase flex overflow-hidden whitespace-nowrap border-r-2 border-purple-500 pr-1"
               style={{
                 fontFamily: "'Bebas Neue', sans-serif",
+                letterSpacing: "0.5em",
+                marginLeft: "-0.25em",
+              }}
+              animate={{
+                width: ["0ch", "31ch"],
+              }}
+              transition={{
+                duration: 3.2,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatDelay: 1,
               }}
             >
-              SOFTPROGRAMMER
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600">
+                SOFT
+              </span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600">
+                PROGRAMMER
+              </span>
             </motion.h1>
-            <p className="text-[12px] md:text-sm text-gray-600 tracking-wide mt-0.5">
-              Software programmed for business success
-            </p>
+
+            {/* Animated Tagline */}
+            <motion.p
+              className="text-[13px] md:text-[16px] text-gray-700 tracking-wide mt-1 ml-[-0.5em] overflow-hidden whitespace-nowrap border-r border-gray-400 pr-1"
+              style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: 400,
+              }}
+              animate={{
+                width: ["0ch", "37ch"],
+              }}
+              transition={{
+                duration: 4.2,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatDelay: 1,
+              }}
+            >
+              <span className="text-purple-600">Software&nbsp;</span>
+              <span className="text-gray-800">programmed&nbsp;</span>
+              <span className="text-indigo-600">for&nbsp;business&nbsp;success</span>
+            </motion.p>
           </div>
+
+          {/* Import Fonts */}
+          <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500&display=swap"
+            rel="stylesheet"
+          />
 
           {/* Desktop Navbar */}
           <ul className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
@@ -119,11 +154,7 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className={`absolute top-10 left-0 bg-white text-gray-800 shadow-2xl rounded-xl py-4 px-4 border border-gray-100 overflow-y-auto ${
-                        menu.name === "Software"
-                          ? "grid grid-cols-2 gap-3 w-[520px] max-h-[350px] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"
-                          : "w-64 max-h-[300px]"
-                      }`}
+                      className="absolute top-10 left-0 bg-white text-gray-800 shadow-2xl rounded-xl py-4 px-4 border border-gray-100 w-64 max-h-[350px] overflow-y-auto scrollbar-thin scrollbar-thumb-purple-400 scrollbar-track-gray-100"
                     >
                       {menu.links.map((link, i) => (
                         <li key={i}>
@@ -239,12 +270,6 @@ export default function Navbar() {
 
       {/* Login Modal */}
       <LoginModal isOpen={loginOpen} onClose={() => setLoginOpen(false)} />
-
-      {/* Import Font */}
-      <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
-        rel="stylesheet"
-      />
     </>
   );
 }
