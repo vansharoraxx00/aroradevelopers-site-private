@@ -32,7 +32,7 @@ export default function Navbar() {
       ],
     },
     {
-      name: "Solution",
+      name: "Solutions",
       links: [
         { name: "Enterprise Resource Planning", path: "/products/erp" },
         { name: "Global Business Management", path: "/software/global-business" },

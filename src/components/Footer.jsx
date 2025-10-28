@@ -119,7 +119,7 @@ export default function Footer() {
                   href="mailto:info@softprogrammer.com"
                   className="hover:text-indigo-500"
                 >
-                  info@softprogrammer.com
+                  Support@softprogrammer.com
                 </a>
               </li>
             </ul>
