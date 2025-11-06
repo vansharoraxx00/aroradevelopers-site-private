@@ -26,15 +26,17 @@ export default function Navbar() {
     {
       name: "Products",
       links: [
-        { name: "Timetoucan", path: "/products/timetoucan" },
-        { name: "IE Products", path: "/products/ie" },
-        { name: "Analytics & Reporting", path: "/products/analtics" },
+        { name: "Time Toucan", path: "https://timetoucan.com/" },
+        { name: "California IT Partners", path: "https://californiaitpartners.com/" },
+        { name: "Demand Axis ", path: "https://demandaxis.com/" },
+        { name: "Rx Portal ", path: "https://RxApprovals.com" },
+        
       ],
     },
     {
-      name: "Solution",
+      name: "Solutions",
       links: [
-        { name: "Enterprise Resource Planning", path: "/products/erp" },
+        { name: "Enterprise Resource Planning", path: "/solutions/erp" },
         { name: "Global Business Management", path: "/software/global-business" },
         { name: "Customer Relation Management", path: "/software/crm" },
         { name: "Supply Chain Management", path: "/software/supply-chain" },

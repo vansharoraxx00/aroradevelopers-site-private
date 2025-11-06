@@ -161,10 +161,10 @@ export default function Home() {
       <section className="py-20 bg-indigo-600 text-white text-center">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { icon: <FaClock />, value: "10+", label: "Years Experience" },
-            { icon: <FaBriefcase />, value: "500+", label: "Projects Completed" },
-            { icon: <FaHandshake />, value: "300+", label: "Happy Clients" },
-            { icon: <FaAward />, value: "25+", label: "Awards Won" },
+            { icon: <FaClock />, value: "20+", label: "Years Experience" },
+            { icon: <FaBriefcase />, value: "226+", label: "Projects Completed" },
+            { icon: <FaHandshake />, value: "122+", label: "Happy Clients" },
+            { icon: <FaAward />, value: "10+", label: "Awards Won" },
           ].map((stat, i) => (
             <motion.div key={i} className="flex flex-col items-center" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.2 }}>
               <div className="text-5xl mb-3">{stat.icon}</div>
@@ -224,19 +224,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-gray-50 text-center">
-        <h2 className="text-4xl font-bold mb-12 text-gray-900">Client Testimonials ❤️</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((t, i) => (
-            <motion.div key={i} whileHover={{ scale: 1.03 }} className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-              <p className="text-gray-600 italic mb-4">“{t.feedback}”</p>
-              <h3 className="font-semibold text-indigo-600">{t.name}</h3>
-              <p className="text-sm text-gray-500">{t.company}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      
 
       {/* Clients Logos */}
       <section className="py-20 bg-white text-center">
@@ -247,6 +235,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      
 
       {/* Blog Highlights */}
       <section className="py-20 bg-gray-50 text-center">

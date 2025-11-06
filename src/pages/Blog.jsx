@@ -83,13 +83,11 @@ export default function Blog() {
             </div>
 
             <div className="mt-6 text-sm text-gray-500">
-              <span className="font-medium">Meta Title:</span> What Is an ERP System? Complete Guide for Modern Businesses
                <p className="mt-4 text-gray-700 text-base md:text-lg max-w-3xl mx-auto">
               Discover how ERP systems unify operations, boost productivity, and cut costs. Learn why integrated ERP software is essential for modern businesses.
             </p>
               <br />
-              <span className="font-medium">Slug / URL:</span> <code className="bg-gray-100 px-2 py-0.5 rounded">/what-is-an-erp-system-and-why-every-business-needs-one</code>
-            </div>
+                          </div>
           </motion.div>
         </section>
 
@@ -103,7 +101,7 @@ export default function Blog() {
             transition={{ duration: 0.6 }}
             className="prose prose-xl prose-indigo mx-auto"
           >
-            <h2>🏢 Introduction: The Hidden Power Behind Streamlined Companies</h2>
+            <h2>🏢 The Hidden Power Behind Streamlined Companies</h2>
             <p>
               If your business is juggling spreadsheets, disconnected apps, or endless data entry — you’re not alone.
               Many growing companies reach a point where manual processes start holding them back. That’s where ERP systems come in.
