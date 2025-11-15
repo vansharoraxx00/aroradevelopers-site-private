@@ -13,10 +13,10 @@ import {
 
 export default function Footer() {
   const socials = [
-    { icon: <FaFacebookF />, link: "https://facebook.com" },
-    { icon: <FaTwitter />, link: "https://twitter.com" },
-    { icon: <FaLinkedinIn />, link: "https://linkedin.com" },
-    { icon: <FaInstagram />, link: "https://instagram.com" },
+    //{ icon: <FaFacebookF />, link: "https://facebook.com" },
+    //{ icon: <FaTwitter />, link: "https://twitter.com" },
+    //{ icon: <FaLinkedinIn />, link: "https://linkedin.com" },
+    //{ icon: <FaInstagram />, link: "https://instagram.com" },
   ];
 
   const products = [
