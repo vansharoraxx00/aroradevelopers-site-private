@@ -131,16 +131,83 @@ export default function Blog() {
             </p>
 
             <ul className="mt-4 list-disc ml-6 text-gray-700 space-y-2">
-              <li>Finance and Accounting</li>
               <li>
-                Human Resources (<Link to="/products/hrm" className="text-indigo-600 hover:underline">HRIS</Link>)
+                Finance and Accounting (
+                <a
+                  href="https://www.softprogrammer.com/accounting"
+                  className="text-indigo-600 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Accounting Software
+                </a>
+                )
               </li>
+
               <li>
-                Customer Relationship Management (<Link to="/software/crm" className="text-indigo-600 hover:underline">CRM</Link>) {/* internal link suggestion */}
+                Human Resources (HRIS) (
+                <a
+                  href="https://www.softprogrammer.com/hris"
+                  className="text-indigo-600 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  HRIS
+                </a>
+                )
               </li>
-              <li>Supply Chain and Inventory Management</li>
-              <li>Time Tracking and Payroll</li>
-              <li>Reporting and Analytics</li>
+
+              <li>
+                Customer Relationship Management (CRM) (
+                <a
+                  href="https://www.softprogrammer.com/crm"
+                  className="text-indigo-600 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  CRM
+                </a>
+                )
+              </li>
+
+              <li>
+                Supply Chain and Inventory Management (
+                <a
+                  href="https://www.softprogrammer.com/scm"
+                  className="text-indigo-600 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  SCM
+                </a>
+                )
+              </li>
+
+              <li>
+                Time Tracking and Payroll (
+                <a
+                  href="https://timetoucan.com/"
+                  className="text-indigo-600 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  TimeToucan
+                </a>
+                )
+              </li>
+
+              <li>
+                Reporting and Analytics (
+                <a
+                  href="https://www.softprogrammer.com/analytics"
+                  className="text-indigo-600 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Analytics
+                </a>
+                )
+              </li>
             </ul>
           </motion.section>
 
