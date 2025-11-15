@@ -37,22 +37,22 @@ export default function Navbar() {
       name: "Solutions",
       links: [
         { name: "Enterprise Resource Planning", path: "/solutions/erp" },
-        { name: "Global Business Management", path: "/software/global-business" },
-        { name: "Customer Relation Management", path: "/software/crm" },
-        { name: "Supply Chain Management", path: "/software/supply-chain" },
-        { name: "Human Capital Management", path: "/software/hcm" },
-        { name: "Human Resource Information System", path: "/software/hris" },
-        { name: "Restaurant Management", path: "/software/restaurant" },
-        { name: "Prescription Management", path: "/software/prescription" },
-        { name: "Professional Services Automation", path: "/software/psa" },
-        { name: "Contract Lifecycle Management", path: "/software/clm" },
-        { name: "Business Spend Management", path: "/software/spend" },
-        { name: "Merchandise", path: "/software/merchandise" },
-        { name: "Outsourcing", path: "/software/outsourcing" },
-        { name: "Multi-Seller Marketplace", path: "/software/multi-seller" },
-        { name: "Distributor Portal", path: "/software/distributor" },
-        { name: "Omnichannel Commerce", path: "/software/omnichannel" },
-        { name: "Analytics & Reporting", path: "/software/analytics-reporting" },
+        { name: "Global Business Management", path: "/solutions/global-business" },
+        { name: "Customer Relation Management", path: "/solutions/crm" },
+        { name: "Supply Chain Management", path: "/solutions/supply-chain" },
+        { name: "Human Capital Management", path: "/solutions/hcm" },
+        { name: "Human Resource Information System", path: "/solutions/hris" },
+        { name: "Restaurant Management", path: "/solutions/restaurant" },
+        { name: "Prescription Management", path: "/solutions/prescription" },
+        { name: "Professional Services Automation", path: "/solutions/psa" },
+        { name: "Contract Lifecycle Management", path: "/solutions/clm" },
+        { name: "Business Spend Management", path: "/solutions/spend" },
+        { name: "Merchandise", path: "/solutions/merchandise" },
+        { name: "Outsourcing", path: "/solutions/outsourcing" },
+        { name: "Multi-Seller Marketplace", path: "/solutions/multi-seller" },
+        { name: "Distributor Portal", path: "/solutions/distributor" },
+        { name: "Omnichannel Commerce", path: "/solutions/omnichannel" },
+        { name: "Analytics & Reporting", path: "/solutions/analytics-reporting" },
       ],
     },
     {
@@ -123,7 +123,7 @@ export default function Navbar() {
                 repeatDelay: 1,
               }}
             >
-              <span className="text-purple-600">Software&nbsp;</span>
+              <span className="text-purple-600">solutions&nbsp;</span>
               <span className="text-gray-800">programmed&nbsp;</span>
               <span className="text-indigo-600">for&nbsp;business&nbsp;success</span>
             </motion.p>
