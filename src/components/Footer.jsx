@@ -157,7 +157,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm opacity-70 text-center md:text-left">
-            © {new Date().getFullYear()} Softprogrammer. All Rights Reserved.
+            © {new Date().getFullYear()} Website designed & developed by Vansh Arora
           </p>
 
           <div className="flex gap-4">
