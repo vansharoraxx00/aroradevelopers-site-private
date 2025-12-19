@@ -56,13 +56,13 @@ export default function Home() {
       name: "Rahul Mehta",
       company: "TechSolutions",
       feedback:
-        "Softprogrammer delivered beyond expectations! Their AI-driven tools have transformed our workflow and boosted efficiency.",
+        "ARORA-PROGRMMERSdelivered beyond expectations! Their AI-driven tools have transformed our workflow and boosted efficiency.",
     },
     {
       name: "Emily Johnson",
       company: "GlobalFinance Inc.",
       feedback:
-        "Professional, reliable, and innovative — Softprogrammer became an indispensable tech partner.",
+        "Professional, reliable, and innovative — ARORA-PROGRMMERSbecame an indispensable tech partner.",
     },
     {
       name: "David Wong",
@@ -74,7 +74,7 @@ export default function Home() {
       name: "Sophia Lee",
       company: "EduTech",
       feedback:
-        "Softprogrammer's team is creative, proactive, and tech-savvy. Highly recommended for any software project.",
+        "Aroradevelopers's team is creative, proactive, and tech-savvy. Highly recommended for any software project.",
     },
   ];
 
@@ -115,7 +115,7 @@ export default function Home() {
           transition={{ delay: 0.4, duration: 1 }}
           className="text-lg max-w-3xl mx-auto mb-10 text-gray-600"
         >
-          Softprogrammer delivers futuristic solutions in AI, Cloud, and Software Development. Our mission? To turn caffeine ☕ and code into world-changing technology.
+          ARORA-PROGRMMERSdelivers futuristic solutions in AI, Cloud, and Software Development. Our mission? To turn caffeine ☕ and code into world-changing technology.
         </motion.p>
 
         <div className="flex justify-center gap-6">
@@ -139,9 +139,9 @@ export default function Home() {
       {/* About Section */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto text-center">
-          <motion.h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">About Softprogrammer</motion.h2>
+          <motion.h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">About Aroradevelopers</motion.h2>
           <motion.p className="max-w-4xl mx-auto text-lg text-gray-600 leading-relaxed">
-            With over 10 years of business performance, Softprogrammer develops reliable, scalable, and secure software solutions for any OS, browser, and device. Our cross-industry expertise combined with cutting-edge IT advancements allows us to deliver custom products that perfectly match the needs and behavior of users.
+            With over 10 years of business performance, ARORA-PROGRMMERSdevelops reliable, scalable, and secure software solutions for any OS, browser, and device. Our cross-industry expertise combined with cutting-edge IT advancements allows us to deliver custom products that perfectly match the needs and behavior of users.
           </motion.p>
         </div>
       </section>
@@ -153,7 +153,7 @@ export default function Home() {
           Our mission is to empower businesses, startups, and innovators to embrace the future of technology. We envision a world where software solutions are not only functional but transformative, driving growth, efficiency, and positive impact.
         </p>
         <p className="max-w-3xl mx-auto text-gray-700">
-          Softprogrammer focuses on sustainability, scalability, and user-centric design to build solutions that truly matter in a modern digital world.
+          ARORA-PROGRMMERSfocuses on sustainability, scalability, and user-centric design to build solutions that truly matter in a modern digital world.
         </p>
       </section>
 
@@ -207,9 +207,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Softprogrammer */}
+      {/* Why Choose ARORA-PROGRMMERS*/}
       <section className="py-20 bg-white text-center">
-        <h2 className="text-4xl font-bold mb-12 text-gray-900">Why Choose Softprogrammer? 💼</h2>
+        <h2 className="text-4xl font-bold mb-12 text-gray-900">Why Choose Aroradevelopers? 💼</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[
             { title: "Innovation First", desc: "We prioritize creativity and technology to craft products that stand out." },
@@ -253,7 +253,7 @@ export default function Home() {
       {/* Call to Action */}
       <section className="py-20 bg-indigo-600 text-white text-center">
         <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="text-4xl font-bold mb-6">
-          Ready to Build the Future With Softprogrammer?
+          Ready to Build the Future With Aroradevelopers?
         </motion.h2>
         <p className="max-w-2xl mx-auto mb-8 text-lg opacity-90">
           Let’s collaborate and bring your vision to life with cutting-edge technology solutions tailored to your business needs.

@@ -49,7 +49,7 @@ export default function BlogERP() {
             digital backbone that keeps every department — from accounting to HR
             to inventory — connected, accurate, and fast. At{" "}
             <span className="font-semibold text-indigo-600">
-              Softprogrammer
+              Aroradevelopers
             </span>
             , we build fully integrated ERP solutions that eliminate
             inefficiencies and help businesses scale effortlessly.

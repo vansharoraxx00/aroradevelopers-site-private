@@ -34,11 +34,11 @@ export default function Blog() {
     "url": "https://yourdomain.com/what-is-an-erp-system-and-why-every-business-needs-one",
     "author": {
       "@type": "Organization",
-      "name": "Softprogrammer"
+      "name": "Aroradevelopers"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Softprogrammer",
+      "name": "Aroradevelopers",
       "logo": {
         "@type": "ImageObject",
         "url": "https://yourdomain.com/path-to-logo.png"
@@ -109,7 +109,7 @@ export default function Blog() {
 
             <p>
               ERP (Enterprise Resource Planning) isn’t just a buzzword; it’s the digital backbone that keeps every department — from accounting to HR to inventory — connected, accurate, and fast.
-              At <strong className="text-indigo-600">Softprogrammer</strong>, we build fully integrated ERP solutions that eliminate inefficiencies and help businesses scale effortlessly.
+              At <strong className="text-indigo-600">Aroradevelopers</strong>, we build fully integrated ERP solutions that eliminate inefficiencies and help businesses scale effortlessly.
             </p>
           </motion.section>
 
@@ -134,7 +134,7 @@ export default function Blog() {
               <li>
                 Finance and Accounting (
                 <a
-                  href="https://www.softprogrammer.com/accounting"
+                  href="https://www.Aroradevelopers.com/accounting"
                   className="text-indigo-600 hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -147,7 +147,7 @@ export default function Blog() {
               <li>
                 Human Resources (HRIS) (
                 <a
-                  href="https://www.softprogrammer.com/hris"
+                  href="https://www.Aroradevelopers.com/hris"
                   className="text-indigo-600 hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -160,7 +160,7 @@ export default function Blog() {
               <li>
                 Customer Relationship Management (CRM) (
                 <a
-                  href="https://www.softprogrammer.com/crm"
+                  href="https://www.Aroradevelopers.com/crm"
                   className="text-indigo-600 hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -173,7 +173,7 @@ export default function Blog() {
               <li>
                 Supply Chain and Inventory Management (
                 <a
-                  href="https://www.softprogrammer.com/scm"
+                  href="https://www.Aroradevelopers.com/scm"
                   className="text-indigo-600 hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -199,7 +199,7 @@ export default function Blog() {
               <li>
                 Reporting and Analytics (
                 <a
-                  href="https://www.softprogrammer.com/analytics"
+                  href="https://www.Aroradevelopers.com/analytics"
                   className="text-indigo-600 hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -231,7 +231,7 @@ export default function Blog() {
               <ul className="space-y-3 text-gray-700">
                 <li><strong>Accuracy:</strong> Prevent costly mistakes caused by duplicate or outdated data.</li>
                 <li><strong>Scalability:</strong> Add new users, departments, or modules as your business grows.</li>
-                <li className="text-sm text-gray-500">At Softprogrammer, we take this further with custom-built ERP solutions that integrate with your existing CRM, HRIS, and payroll environments.</li>
+                <li className="text-sm text-gray-500">At Aroradevelopers, we take this further with custom-built ERP solutions that integrate with your existing CRM, HRIS, and payroll environments.</li>
               </ul>
             </div>
 
@@ -329,7 +329,7 @@ export default function Blog() {
             <h2 className="text-2xl font-semibold text-indigo-700 mb-3">🛠️ How We Can Help</h2>
 
             <p className="text-gray-700">
-              At <strong className="text-indigo-600">Softprogrammer</strong>, we specialize in fully integrated, cloud-based ERP systems designed to grow with your business. From CRM and HRIS integration to custom automation workflows, we’ll build your system around how you work — not the other way around.
+              At <strong className="text-indigo-600">Aroradevelopers</strong>, we specialize in fully integrated, cloud-based ERP systems designed to grow with your business. From CRM and HRIS integration to custom automation workflows, we’ll build your system around how you work — not the other way around.
             </p>
 
             <ul className="mt-4 grid md:grid-cols-2 gap-3 text-gray-700">
@@ -406,7 +406,7 @@ export default function Blog() {
                 {
                   q: "How long does it take to implement an ERP system?",
                   a:
-                    "Implementation depends on your company’s size and complexity. Small businesses can often deploy a cloud ERP in 4–8 weeks, while enterprise-level systems may take a few months to fully customize and test. At Softprogrammer, we handle everything — from setup to staff training — so you can start seeing results as quickly as possible.",
+                    "Implementation depends on your company’s size and complexity. Small businesses can often deploy a cloud ERP in 4–8 weeks, while enterprise-level systems may take a few months to fully customize and test. At Aroradevelopers, we handle everything — from setup to staff training — so you can start seeing results as quickly as possible.",
                 },
                 {
                   q: "Can an ERP system integrate with my existing software?",

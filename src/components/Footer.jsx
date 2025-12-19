@@ -116,10 +116,10 @@ export default function Footer() {
               <li className="flex items-center justify-center md:justify-start gap-2">
                 <FaEnvelope className="text-indigo-600" />
                 <a
-                  href="mailto:info@softprogrammer.com"
+                  href="mailto:info@Aroradevelopers.com"
                   className="hover:text-indigo-500"
                 >
-                  Support@softprogrammer.com
+                  Support@Aroradevelopers.com
                 </a>
               </li>
             </ul>

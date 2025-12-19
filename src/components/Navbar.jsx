@@ -74,7 +74,7 @@ export default function Navbar() {
             onClick={() => navigate("/")}
             className="cursor-pointer select-none flex flex-col items-start leading-tight"
           >
-            {/* Animated SOFTPROGRAMMER */}
+            {/* Animated ARORA-PROGRMMERS*/}
             <motion.h1
               className="text-2xl md:text-3xl font-extrabold uppercase flex overflow-hidden whitespace-nowrap border-r-2 border-purple-500 pr-1"
               style={{
@@ -95,10 +95,10 @@ export default function Navbar() {
               }}
             >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600">
-                SOFT
+                ARORA - 
               </span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600">
-                PROGRAMMER
+                DEVELOPERS
               </span>
             </motion.h1>
 
@@ -123,9 +123,9 @@ export default function Navbar() {
                 repeatDelay: 1,
               }}
             >
-              <span className="text-purple-600">solutions&nbsp;</span>
-              <span className="text-gray-800">programmed&nbsp;</span>
-              <span className="text-indigo-600">for&nbsp;business&nbsp;success</span>
+              <span className="text-purple-600">Building&nbsp;</span>
+              <span className="text-gray-800">Solutions&nbsp;</span>
+              <span className="text-indigo-600">for&nbsp;Writing&nbsp;the Future</span>
             </motion.p>
           </div>
 

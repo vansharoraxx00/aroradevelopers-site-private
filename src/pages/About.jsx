@@ -27,7 +27,7 @@ export default function About() {
         >
           At{" "}
           <span className="font-semibold text-indigo-600">
-            Softprogrammer
+            Aroradevelopers
           </span>
           , we specialize in transforming ideas into impactful digital
           solutions. Our mission is to deliver cutting-edge, scalable, and
