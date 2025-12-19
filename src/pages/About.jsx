@@ -27,25 +27,44 @@ export default function About() {
         >
           At{" "}
           <span className="font-semibold text-indigo-600">
-            Aroradevelopers
+            Arora Developers
           </span>
           , we specialize in transforming ideas into impactful digital
           solutions. Our mission is to deliver cutting-edge, scalable, and
-          secure software powered by modern technologies and AI-driven
-          innovation. We build products that help businesses grow, adapt, and
-          lead in a fast-evolving digital world.
+          secure software powered by modern technologies and innovation.
+          We build reliable digital products that help businesses grow
+          and adapt in an evolving tech-driven world.
         </motion.p>
+
+        {/* Leadership Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+          className="mt-12 space-y-2"
+        >
+          <p className="text-gray-700 font-medium">
+            <span className="font-semibold">Owner:</span> Vansh Arora
+          </p>
+
+          <p className="text-gray-500 text-sm">
+            <span className="font-medium text-gray-600">
+              Co-Owner / Managing Partner:
+            </span>{" "}
+            Raghav Arora
+          </p>
+        </motion.div>
 
         {/* Creator Credit */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.6 }}
-          className="mt-12"
+          transition={{ delay: 1.2, duration: 0.6 }}
+          className="mt-8"
         >
-          <p className="text-sm text-gray-500">
+          <p className="text-xs text-gray-400">
             Website designed & developed by{" "}
-            <span className="font-semibold text-gray-700">
+            <span className="font-medium text-gray-500">
               Vansh Arora
             </span>
           </p>
