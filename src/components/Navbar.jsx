@@ -95,7 +95,7 @@ export default function Navbar() {
               }}
             >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600">
-                ARORA - 
+                ARORA
               </span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600">
                 DEVELOPERS

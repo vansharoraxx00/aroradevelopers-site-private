@@ -56,7 +56,7 @@ export default function Home() {
       name: "Rahul Mehta",
       company: "TechSolutions",
       feedback:
-        "ARORA-PROGRMMERSdelivered beyond expectations! Their AI-driven tools have transformed our workflow and boosted efficiency.",
+        "ARORA-PROGRMMERS delivered beyond expectations! Their AI-driven tools have transformed our workflow and boosted efficiency.",
     },
     {
       name: "Emily Johnson",
@@ -115,7 +115,7 @@ export default function Home() {
           transition={{ delay: 0.4, duration: 1 }}
           className="text-lg max-w-3xl mx-auto mb-10 text-gray-600"
         >
-          ARORA-PROGRMMERSdelivers futuristic solutions in AI, Cloud, and Software Development. Our mission? To turn caffeine ☕ and code into world-changing technology.
+          Aroradevelopers delivers futuristic solutions in AI, Cloud, and Software Development. Our mission? To turn caffeine ☕ and code into world-changing technology.
         </motion.p>
 
         <div className="flex justify-center gap-6">
@@ -141,7 +141,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto text-center">
           <motion.h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">About Aroradevelopers</motion.h2>
           <motion.p className="max-w-4xl mx-auto text-lg text-gray-600 leading-relaxed">
-            With over 10 years of business performance, ARORA-PROGRMMERSdevelops reliable, scalable, and secure software solutions for any OS, browser, and device. Our cross-industry expertise combined with cutting-edge IT advancements allows us to deliver custom products that perfectly match the needs and behavior of users.
+            With over 10 years of business performance, Aroradevelopers develops reliable, scalable, and secure software solutions for any OS, browser, and device. Our cross-industry expertise combined with cutting-edge IT advancements allows us to deliver custom products that perfectly match the needs and behavior of users.
           </motion.p>
         </div>
       </section>
@@ -153,7 +153,7 @@ export default function Home() {
           Our mission is to empower businesses, startups, and innovators to embrace the future of technology. We envision a world where software solutions are not only functional but transformative, driving growth, efficiency, and positive impact.
         </p>
         <p className="max-w-3xl mx-auto text-gray-700">
-          ARORA-PROGRMMERSfocuses on sustainability, scalability, and user-centric design to build solutions that truly matter in a modern digital world.
+          Aroradevelopers focuses on sustainability, scalability, and user-centric design to build solutions that truly matter in a modern digital world.
         </p>
       </section>
 
